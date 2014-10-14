@@ -1,7 +1,7 @@
 package sample.jmockit.v1_4;
 
-import mockit.Expectations;
 import mockit.Mocked;
+import mockit.NonStrictExpectations;
 import org.junit.Test;
 
 /**
@@ -9,13 +9,14 @@ import org.junit.Test;
  * Time: 0:33
  */
 public class JMockitSampleTest {
+
     @Mocked
     JMockitSample mock;
 
     @Test
     public void testGetAge() {
         // Mockのコールされる処理の順序と、返却値、呼び出し回数などを設定
-        new Expectations() {
+        new NonStrictExpectations() {
             {
                 // コンストラクタ
                 // 指定引数でコールされなければエラー
